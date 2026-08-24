@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# qa harness
+scripts/qa/node_modules
+scripts/qa/probe.png
+scripts/qa/viewport.png

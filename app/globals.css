@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+@theme {
+  /* THE ORIGIN — CSE neutral */
+  --color-origin-950: #07090d;
+  --color-origin-900: #0b0e14;
+  --color-origin-800: #111820;
+  --color-graphite: #aab4be;
+  --color-argent: #d7e0e8;
+  --color-ice: #f4f6f8;
+
+  /* THE FORGE — Script Soldiers */
+  --color-forge-bg: #080a0f;
+  --color-forge-navy: #101923;
+  --color-gold: #c79a3b;
+  --color-gold-bright: #e4be68;
+  --color-gold-dim: #8a6f2f;
+  --color-crimson: #8e1830;
+  --color-crimson-deep: #4a0b1a;
+
+  /* THE DEFENSE — Cyber Knights */
+  --color-defense-bg: #030810;
+  --color-defense-navy: #071526;
+  --color-cyan: #00d9e8;
+  --color-cyan-glow: #36f3ff;
+  --color-cyan-dim: #0a8f9c;
+  --color-steel: #9aa7b5;
+  --color-silver: #d7e0e8;
+
+  /* shared text */
+  --color-ivory: #f3efe7;
+  --color-ivory-dim: #a8a396;
+}
+
+@theme inline {
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+  --color-accent-dim: var(--accent-dim);
+  --color-energy: var(--energy);
+  --color-structure: var(--structure);
+  --color-page-bg: var(--page-bg);
+
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", monospace;
+}
+
+:root {
+  --accent: #d7e0e8;
+  --accent-bright: #f4f6f8;
+  --accent-dim: #aab4be;
+  --energy: #d7e0e8;
+  --structure: #aab4be;
+  --page-bg: #07090d;
+}
+
+@layer base {
+  html {
+    scrollbar-color: var(--color-graphite) var(--page-bg);
+  }
+
+  body {
+    background: var(--page-bg);
+    color: var(--color-ivory);
+  }
+}
+
+/* PHASE 2.2 — native cursor hidden only while the premium cursor is active */
+@media (pointer: fine) {
+  html.has-cursor,
+  html.has-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* TEAM — member name typography: word-boundary wrapping only, balanced lines */
+.team-name {
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+
+/* PHASE 2.13 — standardized image treatment (CSS-only, originals untouched).
+ * Grayscale is a HOVER effect — scoped to hover-capable devices so touch
+ * users (mobile/tablet, shared-port previews) always see full color. */
+@media (hover: hover) and (pointer: fine) {
+  .img-treated {
+    filter: grayscale(1) contrast(1.06) brightness(0.96);
+    transition:
+      filter 400ms ease,
+      transform 400ms ease;
+  }
+  .group:hover .img-treated,
+  .img-treated:hover {
+    filter: grayscale(0) contrast(1) brightness(1);
+  }
+}
+.img-frame {
+  position: relative;
+}
+.img-frame::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* PHASE 2.11 — unified micro-interaction tokens */
+.hover-lift {
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px -20px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+/* PHASE 2.17 — accessible keyboard focus */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* PHASE 2.19 — cinematic polish: vignette + rare light sweep */
+.vignette::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  background: radial-gradient(
+    120% 92% at 50% 44%,
+    transparent 58%,
+    rgba(0, 0, 0, 0.36) 100%
+  );
+}
+@keyframes card-sheen {
+  0%,
+  91% {
+    transform: translateX(-140%);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+.sheen {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.sheen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  background: linear-gradient(
+    105deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 16%, transparent),
+    transparent
+  );
+  animation: card-sheen 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheen::after {
+    display: none;
+  }
+  .hover-lift,
+  .hover-lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@utility type-display {
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+@utility type-heading {
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+@utility bg-arch-grid {
+  background-image:
+    linear-gradient(rgba(212, 224, 232, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 224, 232, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility bg-scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(212, 224, 232, 0.04) 0px,
+    rgba(212, 224, 232, 0.04) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+@utility bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+@utility bg-metal {
+  background-image: linear-gradient(
+    180deg,
+    #14181f 0%,
+    #0b0e14 45%,
+    #111820 55%,
+    #0b0e14 100%
+  );
+}
+
+@utility text-outline {
+  -webkit-text-stroke: 1px var(--color-argent);
+  color: transparent;
+}
+
+@utility text-glow {
+  text-shadow: 0 0 28px color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+@utility corner-ticks {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: var(--accent);
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-top: 1px solid;
+    border-left: 1px solid;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+  }
+}
+
+@keyframes particle-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: var(--particle-opacity, 0.4);
+  }
+
+  90% {
+    opacity: var(--particle-opacity, 0.4);
+  }
+
+  100% {
+    transform: translate3d(
+      var(--particle-drift-x, 20px),
+      var(--particle-drift-y, -60px),
+      0
+    );
+    opacity: 0;
+  }
+}
+
+.particle {
+  animation: particle-drift linear infinite;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
