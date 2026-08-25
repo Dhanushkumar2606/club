@@ -158,6 +158,22 @@ export function LandingPage() {
           </div>
         </section>
 
+        <section className="contact-section relative z-[20] mx-auto w-full max-w-4xl pb-8 text-center">
+          <Reveal>
+            <SectionLabel>CONTACT</SectionLabel>
+            <div className="mt-6 flex flex-col items-center gap-3">
+              <p className="mono-label text-graphite">REACH US AT</p>
+              <a
+                href="mailto:periitcseclub@gmail.com"
+                className="font-mono text-sm tracking-[0.18em] text-accent underline-offset-4 transition-colors hover:text-accent-bright hover:underline sm:text-base"
+              >
+                periitcseclub@gmail.com
+              </a>
+              <p className="mono-label text-ivory-dim/50">DEPARTMENT OF CSE — PERI INSTITUTE OF TECHNOLOGY</p>
+            </div>
+          </Reveal>
+        </section>
+
         <footer className="bottom-bar mt-12 flex items-center justify-between border-t border-ivory-dim/15 pt-6">
           <span className="mono-label text-graphite">
             SYS/BOOT — IDENTITY SYSTEM ONLINE
