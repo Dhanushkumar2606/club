@@ -33,7 +33,7 @@ export const cyberKnights: Club = clubSchema.parse({
   ],
   members: [
     { name: "HAKESH.S", position: "PRESIDENT", image: null, linkedin: "https://www.linkedin.com/in/hakesh-s/" },
-    { name: "SUJEETH", position: "VICE PRESIDENT", image: null, linkedin: "https://www.linkedin.com/in/g-v-sujeeth-0b0973353/" },
+    { name: "SUJEETH G.V", position: "VICE PRESIDENT", image: null, linkedin: "https://www.linkedin.com/in/g-v-sujeeth-0b0973353/" },
     { name: "NAVYA MJ", position: "SECRETARY", image: "/images/team/cyber-knights/navya.jpeg", linkedin: "https://www.linkedin.com/in/navya-mj/" },
     { name: "DHARANI SRI", position: "SECRETARY", image: "/images/team/cyber-knights/dhranisri.jpeg", linkedin: "https://www.linkedin.com/in/dharanisri-saravanan-682a7132b/" },
     { name: "ABHUL RAHIMAN", position: "SECRETARY", image: null, linkedin: "https://www.linkedin.com/in/abdul-rahiman-b83a1a32b/" },

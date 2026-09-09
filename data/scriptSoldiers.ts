@@ -37,7 +37,7 @@ export const scriptSoldiers: Club = clubSchema.parse({
     { name: "YUVA KRISHNA M", position: "SECRETARY", image: "/images/team/script-soldiers/yuva1.jpeg", linkedin: "https://www.linkedin.com/in/m-yuvakrishna-148952326/" },
     { name: "GOPIKA J", position: "SECRETARY", image: null, linkedin: null },
     { name: "SARAN ", position: "JOINT SECRETARY", image: null, linkedin: null },
-    { name: "KARUNYA P", position: "JOINT SECRETARY", image: null, linkedin: null},
+    { name: "KARUNYA P", position: "JOINT SECRETARY", image: null, linkedin: "https://www.linkedin.com/in/karunya-palanivel-199a04383/"},
     { name: "INDHU S", position: "TREASURER", image: "/images/team/script-soldiers/indhu.jpeg", linkedin: "https://www.linkedin.com/in/indhu-saravanan-1b057038b/" },
     { name: "SANJEEVAN U.S", position: "STUDENT SECRETARY", image: null, linkedin: "https://www.linkedin.com/in/sanjeevan-u-s-4362423b5/" },
     { name: "ADHITHYA", position: "STUDENT SECRETARY", image: "/images/team/script-soldiers/adhi1.jpg", linkedin: "https://www.linkedin.com/in/adhithya-rajadurai-54507a331/" },
