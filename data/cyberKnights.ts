@@ -43,6 +43,6 @@ export const cyberKnights: Club = clubSchema.parse({
     { name: "ARSHAN AS", position: "JOINT TREASURER", image: null, linkedin: "https://www.linkedin.com/in/arshan-as-b1248a3a3/" },
     { name: "RUBA SRI B", position: "STUDENT SECRETARY", image: "/images/team/cyber-knights/rubasri.jpeg", linkedin: "https://www.linkedin.com/in/ruba-sri-b-/" },
     { name: "SASI", position: "STUDENT SECRETARY", image: null, linkedin: null },
-    { name: "TEJASWINI", position: "STUDENT SECRETARY", image: null, linkedin: null },
+    { name: "TEJASWINI", position: "STUDENT SECRETARY", image: null, linkedin: "https://www.linkedin.com/in/tejaswini-durai-rajan-ba5100384/" },
   ],
 });

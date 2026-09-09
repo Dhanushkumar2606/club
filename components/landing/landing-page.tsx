@@ -68,9 +68,19 @@ export function LandingPage() {
           <span className="mono-label text-graphite">
             PERI INSTITUTE OF TECHNOLOGY
           </span>
-          <span className="mono-label hidden text-graphite sm:block">
-            DEPARTMENT OF CSE
-          </span>
+          <div className="flex items-center gap-6">
+            <span className="mono-label hidden text-graphite sm:block">
+              DEPARTMENT OF CSE
+            </span>
+            <nav className="flex items-center gap-4 border-l border-ivory-dim/15 pl-6">
+              <Link href="/gallery" className="mono-label text-graphite transition-colors hover:text-accent">
+                GALLERY
+              </Link>
+              <Link href="/events" className="mono-label text-graphite transition-colors hover:text-accent">
+                EVENTS
+              </Link>
+            </nav>
+          </div>
         </header>
 
         <div className="flex flex-1 flex-col items-center justify-center gap-12 py-20 text-center">

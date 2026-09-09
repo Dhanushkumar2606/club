@@ -9,7 +9,6 @@ const WORLDS = [
   { id: "cse", label: "CSE", name: "CSE — THE ORIGIN", href: "/" },
   { id: "ss", label: "SS", name: "SCRIPT SOLDIERS", href: "/script-soldiers" },
   { id: "ck", label: "CK", name: "CYBER KNIGHTS", href: "/cyber-knights" },
-  { id: "gallery", label: "GALLERY", name: "GALLERY — ARCHIVE", href: "/gallery" },
 ];
 
 export function ClubSwitcher() {
