@@ -25,7 +25,7 @@ export function MottoSection({
       const text = scope.querySelector<HTMLElement>(".motto-text");
       const caret = scope.querySelector<HTMLElement>(".motto-caret");
       if (!text) return;
-      const split = SplitText.create(text, { type: "chars" });
+      const split = SplitText.create(text, { type: "words,chars" });
 
       if (reduce) {
         gsap.set(split.chars, { autoAlpha: 1, scale: 1, filter: "blur(0px)" });
@@ -99,7 +99,7 @@ export function MottoSection({
       />
       <p
         role="text"
-        className="motto-text text-glow relative max-w-5xl px-6 text-center font-sans text-5xl font-semibold tracking-tight text-ivory sm:text-7xl lg:text-8xl"
+        className="motto-text text-glow relative max-w-5xl px-6 text-center font-sans font-semibold tracking-tight text-ivory text-[clamp(1.6rem,5.2vw,8rem)]"
       >
         {club.motto}
         {motion === "precise" && (

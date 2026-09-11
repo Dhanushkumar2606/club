@@ -65,9 +65,20 @@ export function LandingPage() {
 
       <div className="relative z-10 flex flex-1 flex-col">
         <header className="top-bar flex items-center justify-between border-b border-ivory-dim/15 pb-6">
-          <span className="mono-label text-graphite">
-            PERI INSTITUTE OF TECHNOLOGY
-          </span>
+          <div
+            className="flex w-fit flex-col items-center"
+            style={{ filter: "drop-shadow(0 0 14px rgba(227,6,19,0.32)) drop-shadow(0 0 32px rgba(227,6,19,0.14))" }}
+          >
+            <h1 className="text-center font-sans text-[clamp(1.9rem,4vw,2.8rem)] font-black leading-none tracking-tight text-[#E30613]">
+              PERI
+            </h1>
+            <p className="text-center font-sans text-[clamp(0.52rem,1.1vw,0.72rem)] font-semibold tracking-[0.16em] text-[#E30613]">
+              INSTITUTE OF TECHNOLOGY
+            </p>
+            <p className="mt-0.5 text-center font-mono text-[0.5rem] tracking-[0.16em] text-argent/70">
+              (AN AUTONOMOUS INSTITUTION)
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <span className="mono-label hidden text-graphite sm:block">
               DEPARTMENT OF CSE

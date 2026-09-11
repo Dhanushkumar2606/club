@@ -37,7 +37,7 @@ function PhotoFrame({
 }
 
 export function LeadershipSection() {
-  const { hod, coordinators } = leadership;
+  const { vicePrincipal, hod, coordinators } = leadership;
   return (
     <section className="relative py-28">
       <div className="mx-auto max-w-6xl">
@@ -54,16 +54,27 @@ export function LeadershipSection() {
         </Reveal>
 
         <Reveal>
-          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_1.4fr] lg:gap-16">
-            <PhotoFrame
-              monogram="HOD"
-              image={hod.image}
-              alt={hod.name}
-              className="max-w-md"
-            />
-            <div className="flex flex-col gap-5">
-              <p className="mono-label text-accent/70">[HOD]</p>
-              <h2 className="type-heading text-ivory">{hod.name}</h2>
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="flex flex-col items-center text-center">
+              <PhotoFrame
+                monogram="VP"
+                image={vicePrincipal.image}
+                alt={vicePrincipal.name}
+                className="max-w-sm"
+              />
+              <p className="mono-label mt-5 text-accent/70">[VP]</p>
+              <h2 className="type-heading mt-2 text-ivory">{vicePrincipal.name}</h2>
+              <p className="mono-label text-accent">{vicePrincipal.position}</p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <PhotoFrame
+                monogram="HOD"
+                image={hod.image}
+                alt={hod.name}
+                className="max-w-sm"
+              />
+              <p className="mono-label mt-5 text-accent/70">[HOD]</p>
+              <h2 className="type-heading mt-2 text-ivory">{hod.name}</h2>
               <p className="mono-label text-accent">{hod.position}</p>
             </div>
           </div>

@@ -72,13 +72,49 @@
   }
 }
 
-/* TEAM — member name typography: word-boundary wrapping only, balanced lines */
+/* Cursor turns dark inside light finale veil */
+html.cursor-dark .pc-dot {
+  background: #141414 !important;
+  mix-blend-mode: normal !important;
+}
+html.cursor-dark .pc-ring {
+  border-color: rgba(20, 20, 20, 0.55) !important;
+  mix-blend-mode: normal !important;
+}
+html.cursor-dark .pc-ring .pc-label {
+  color: #141414 !important;
+}
+
+/* TEAM — member name typography: word-boundary wrapping only, balanced lines
+   Supports 1-4 word names as 2-4 balanced lines where needed — never splits words */
 .team-name {
-  max-width: 100%;
+  display: block;
+  max-width: 14.5ch;
   word-break: normal;
   overflow-wrap: normal;
   hyphens: none;
   text-wrap: balance;
+  line-height: 1.02;
+  overflow: visible;
+  padding-block: 0.06em;
+}
+.team-name .word {
+  white-space: nowrap;
+}
+.team-name[data-compact="true"] {
+  max-width: 11ch;
+  font-size: clamp(2.2rem, 4.8vw, 4.5rem) !important;
+}
+
+/* MOTTO — single line: Protect. Secure. Lead. */
+.motto-text {
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  text-wrap: nowrap;
+}
+.motto-text .word {
+  white-space: nowrap;
 }
 
 /* PHASE 2.13 — standardized image treatment (CSS-only, originals untouched).

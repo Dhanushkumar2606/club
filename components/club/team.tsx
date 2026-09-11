@@ -64,7 +64,10 @@ function MemberCard({
               IDENTITY VERIFIED ✓
             </p>
           )}
-          <h3 className="team-name type-display text-ivory">
+          <h3
+            data-compact={name === "SANJEEVAN U.S" ? "true" : undefined}
+            className="team-name type-display text-ivory"
+          >
             {name.toUpperCase()}
           </h3>
           <span className="member-accent-line block h-px w-16 origin-left bg-accent/70" />
@@ -382,7 +385,10 @@ export function TeamSection({
                       IDENTITY VERIFIED ✓
                     </p>
                   )}
-                  <h3 className="type-heading text-ivory">
+                  <h3
+                    data-compact={member.name === "SANJEEVAN U.S" ? "true" : undefined}
+                    className="team-name type-heading text-ivory"
+                  >
                     {member.name.toUpperCase()}
                   </h3>
                   <p className="mono-label text-accent">

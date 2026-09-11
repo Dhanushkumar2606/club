@@ -58,7 +58,6 @@ export function ClubPage({ club }: { club: Club }) {
         <SectionBridge kind="stream" seed={11} />
 <MissionSection club={club} words={missionWords} motion={missionMotion} />
 
-        <SectionBridge kind="line" seed={22} />
         <VisionSection club={club} motion={missionMotion} />
 
         <SectionBridge kind="type" from="VISION" to={isForge ? "MOTTO" : "MOTTO"} />

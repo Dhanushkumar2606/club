@@ -204,7 +204,7 @@ export function MissionSection({
           </div>
           <p
           role="text"
-          className="mission-statement mx-auto mt-16 max-w-2xl text-lg leading-8 text-ivory/80 sm:text-xl sm:leading-9"
+          className="mission-statement mx-auto mt-16 max-w-2xl border-0 text-lg leading-8 text-ivory/80 before:hidden after:hidden sm:text-xl sm:leading-9"
         >
             {club.mission}
           </p>

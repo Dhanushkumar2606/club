@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap } from "@/lib/gsap";
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { department } from "@/data/department";
 import { scriptSoldiers } from "@/data/scriptSoldiers";
 import { cyberKnights } from "@/data/cyberKnights";
@@ -38,6 +38,14 @@ export function FinaleSection() {
           end: "bottom bottom",
           scrub: 1,
         },
+      });
+
+      ScrollTrigger.create({
+        trigger: ref.current,
+        start: "top 75%",
+        end: "bottom 20%",
+        onToggle: (self) =>
+          document.documentElement.classList.toggle("cursor-dark", self.isActive),
       });
 
       tl.to(".finale-veil", { autoAlpha: 1, duration: 1.5 })

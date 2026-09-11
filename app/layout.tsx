@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { SmoothScroll } from "@/components/shared/smooth-scroll";
 import { EntryLoader } from "@/components/shared/entry-loader";
 import { PremiumCursor } from "@/components/shared/premium-cursor";
@@ -8,14 +8,18 @@ import { ScrollProgress } from "@/components/shared/scroll-progress";
 import { ClubSwitcher } from "@/components/shared/club-switcher";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const spaceGrotesk = localFont({
+  src: "../public/fonts/SpaceGrotesk-Variable.woff2",
   variable: "--font-space-grotesk",
-  subsets: ["latin"],
+  display: "swap",
+  weight: "300 700",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const jetbrainsMono = localFont({
+  src: "../public/fonts/JetBrainsMono-Variable.woff2",
   variable: "--font-jetbrains",
-  subsets: ["latin"],
+  display: "swap",
+  weight: "100 800",
 });
 
 export const metadata: Metadata = {
