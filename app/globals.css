@@ -330,9 +330,29 @@ html.cursor-dark .pc-ring .pc-label {
   }
 }
 
+@keyframes particle-twinkle {
+  0%,
+  100% {
+    opacity: var(--particle-opacity, 0.4);
+  }
+  50% {
+    opacity: calc(var(--particle-opacity, 0.4) * 0.35);
+  }
+}
+
 .particle {
   animation: particle-drift linear infinite;
   will-change: transform, opacity;
+}
+
+.particle--twinkle {
+  animation:
+    particle-drift linear infinite,
+    particle-twinkle 3.2s ease-in-out infinite;
+}
+
+.particle--blur {
+  filter: blur(0.6px);
 }
 
 @media (prefers-reduced-motion: reduce) {

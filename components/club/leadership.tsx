@@ -65,6 +65,24 @@ export function LeadershipSection() {
               <p className="mono-label mt-5 text-accent/70">[VP]</p>
               <h2 className="type-heading mt-2 text-ivory">{vicePrincipal.name}</h2>
               <p className="mono-label text-accent">{vicePrincipal.position}</p>
+              {vicePrincipal.linkedin && (
+                <a
+                  href={vicePrincipal.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mono-label group relative mt-3 block text-ivory-dim transition-colors hover:text-accent"
+                >
+                  <span className="block transition-opacity duration-300 group-hover:opacity-0">
+                    CONNECT ↗
+                  </span>
+                  <span
+                    aria-hidden
+                    className="absolute inset-0 block text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  >
+                    LINKEDIN ↗
+                  </span>
+                </a>
+              )}
             </div>
             <div className="flex flex-col items-center text-center">
               <PhotoFrame
@@ -76,6 +94,24 @@ export function LeadershipSection() {
               <p className="mono-label mt-5 text-accent/70">[HOD]</p>
               <h2 className="type-heading mt-2 text-ivory">{hod.name}</h2>
               <p className="mono-label text-accent">{hod.position}</p>
+              {hod.linkedin && (
+                <a
+                  href={hod.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mono-label group relative mt-3 block text-ivory-dim transition-colors hover:text-accent"
+                >
+                  <span className="block transition-opacity duration-300 group-hover:opacity-0">
+                    CONNECT ↗
+                  </span>
+                  <span
+                    aria-hidden
+                    className="absolute inset-0 block text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  >
+                    LINKEDIN ↗
+                  </span>
+                </a>
+              )}
             </div>
           </div>
         </Reveal>
@@ -103,6 +139,24 @@ export function LeadershipSection() {
                     <p className="mono-label text-accent">
                       {coordinator.position}
                     </p>
+                    {coordinator.linkedin && (
+                      <a
+                        href={coordinator.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mono-label group relative block w-fit text-ivory-dim transition-colors hover:text-accent"
+                      >
+                        <span className="block transition-opacity duration-300 group-hover:opacity-0">
+                          CONNECT ↗
+                        </span>
+                        <span
+                          aria-hidden
+                          className="absolute inset-0 block text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        >
+                          LINKEDIN ↗
+                        </span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </Reveal>
