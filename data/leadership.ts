@@ -8,21 +8,21 @@ export const leadership: {
   vicePrincipal: {
     name: "Dr.MAGESH BALAKRISHNAN",
     position: "Vice Principal",
-    image: "/images/leadership/vp.jpg",
+    image: "/images/leadership/vp2.jpg",
     linkedin: "https://www.linkedin.com/in/dr-magesh-balakrishnan-793331128/",
   },
   hod: {
-    name: "PRADEEPA.K",
+    name: "Ms.PRADEEPA.K",
     position: "Head of Department — CSE",
     image: "/images/leadership/hod1.jpeg",
     linkedin: null,
   },
   coordinators: [
     {
-      name: "To be added later",
+      name: "DHARMA PRAKASH V",
       position: "Faculty Coordinator — CSE",
-      image: null,
-      linkedin: null,
+      image: "/images/leadership/staff1.jpeg",
+      linkedin: "https://www.linkedin.com/in/v-dharma-prakash-8aa55654/",
       club: "both",
     },
     {

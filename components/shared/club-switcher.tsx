@@ -9,6 +9,8 @@ const WORLDS = [
   { id: "cse", label: "CSE", name: "CSE — THE ORIGIN", href: "/" },
   { id: "ss", label: "SS", name: "SCRIPT SOLDIERS", href: "/script-soldiers" },
   { id: "ck", label: "CK", name: "CYBER KNIGHTS", href: "/cyber-knights" },
+  { id: "gallery", label: "GALLERY", name: "GALLERY — ARCHIVE", href: "/gallery" },
+  { id: "events", label: "EVENTS", name: "EVENTS — REGISTRATIONS", href: "/events" },
 ];
 
 export function ClubSwitcher() {
@@ -61,10 +63,10 @@ export function ClubSwitcher() {
   return (
     <>
       <nav
-        className="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-1/2 z-40 -translate-x-1/2"
-        aria-label="Switch club"
+        className="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-1/2 z-40 w-max max-w-[calc(100vw-2rem)] -translate-x-1/2"
+        aria-label="Site navigation"
       >
-        <div className="corner-ticks flex items-stretch border border-ivory-dim/25 bg-[#f4f2ec]/95 text-[#141414] backdrop-blur">
+        <div className="corner-ticks flex max-w-full items-stretch overflow-x-auto border border-ivory-dim/25 bg-[#f4f2ec]/95 text-[#141414] backdrop-blur">
           {WORLDS.map((world) => {
             const active = pathname === world.href;
             return (
@@ -73,8 +75,9 @@ export function ClubSwitcher() {
                 type="button"
                 onClick={() => go(world.href, world.name)}
                 aria-current={active ? "page" : undefined}
+                title={world.name}
                 className={cn(
-                  "mono-label px-4 py-2.5 transition-colors duration-200 hover:bg-[#141414]/10",
+                  "mono-label whitespace-nowrap px-3 py-2.5 transition-colors duration-200 hover:bg-[#141414]/10 sm:px-4",
                   active &&
                     "bg-[#141414] text-[#f4f2ec] hover:bg-[#141414]",
                 )}

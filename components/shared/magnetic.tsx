@@ -28,7 +28,9 @@ function scanTargets(): Array<{ el: Element; amp: number }> {
   };
 
   document
-    .querySelectorAll('nav[aria-label="Switch club"] button')
+    .querySelectorAll(
+      'nav[aria-label="Site navigation"] button, nav[aria-label="Switch club"] button',
+    )
     .forEach((el) => push(el, 6));
   document.querySelectorAll(".hero-nav a").forEach((el) => push(el, 6));
 

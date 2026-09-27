@@ -1,0 +1,20 @@
+import { chromium } from 'playwright';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
+await p.goto('http://localhost:3001/', { waitUntil: 'networkidle', timeout: 45000 });
+await p.waitForTimeout(3000);
+const hud = await p.evaluate(() => {
+  const el = document.querySelector('[data-hud]') || document.querySelector('header');
+  const r = el ? el.getBoundingClientRect() : null;
+  const cs = el ? getComputedStyle(el) : null;
+  return { found: !!el, tag: el?.tagName, rect: r && {x:r.x,y:r.y,w:Math.round(r.width),h:Math.round(r.height)}, opacity: cs?.opacity, z: cs?.zIndex };
+});
+console.log('HUD:', JSON.stringify(hud));
+await p.screenshot({ path: '/tmp/shots/top.png' });
+await p.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.45));
+await p.waitForTimeout(1800);
+await p.screenshot({ path: '/tmp/shots/mid.png' });
+await p.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.82));
+await p.waitForTimeout(1800);
+await p.screenshot({ path: '/tmp/shots/portals.png' });
+await b.close();
