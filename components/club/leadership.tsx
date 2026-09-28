@@ -123,7 +123,7 @@ export function LeadershipSection() {
               <div className="h-px w-full bg-ivory-dim/15" />
             </div>
           </Reveal>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2">
             {coordinators.map((coordinator, i) => (
               <Reveal key={i} delay={i * 0.08}>
                 <div className="corner-ticks hover-lift flex flex-col gap-5 border border-accent/20 bg-forge-navy/20 p-5 transition-colors hover:border-accent">

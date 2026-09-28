@@ -42,7 +42,7 @@ export const cyberKnights: Club = clubSchema.parse({
     { name: "RITHEESH MG", position: "TREASURER", image: "/images/team/cyber-knights/ritheesh.jpeg", linkedin: "https://www.linkedin.com/in/ritheesh-mg-038982347/" },
     { name: "ARSHAN AS", position: "JOINT TREASURER", image: "/images/team/cyber-knights/Arshan .jpg", linkedin: "https://www.linkedin.com/in/arshan-as-b1248a3a3/" },
     { name: "RUBA SRI B", position: "STUDENT SECRETARY", image: "/images/team/cyber-knights/rubasri.jpeg", linkedin: "https://www.linkedin.com/in/ruba-sri-b-/" },
-    { name: "SASI", position: "STUDENT SECRETARY", image: "/images/team/cyber-knights/sasi.jpg", linkedin: null },
-    { name: "TEJASWINI", position: "STUDENT SECRETARY", image: "/images/team/cyber-knights/tejaswini.jpeg", linkedin: "https://www.linkedin.com/in/tejaswini-durai-rajan-ba5100384/" },
+    { name: "SASI S", position: "STUDENT SECRETARY", image: "/images/team/cyber-knights/sasi.jpg", linkedin: null },
+    { name: "TEJASWINI D", position: "STUDENT SECRETARY", image: "/images/team/cyber-knights/tejaswini.jpeg", linkedin: "https://www.linkedin.com/in/tejaswini-durai-rajan-ba5100384/" },
   ],
 });

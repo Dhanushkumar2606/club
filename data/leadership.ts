@@ -26,16 +26,9 @@ export const leadership: {
       club: "both",
     },
     {
-      name: "To be added later",
+      name: "SUGANYA S",
       position: "Faculty Coordinator — CSE",
-      image: null,
-      linkedin: null,
-      club: "both",
-    },
-    {
-      name: "To be added later",
-      position: "Faculty Coordinator — CSE",
-      image: null,
+      image: "/images/leadership/suganya-mam.jpg",
       linkedin: null,
       club: "both",
     },
